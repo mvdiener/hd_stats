@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
   belongs_to :building
-  has_many :ingredients, class_name: "Product", foreign_key: "ingredient_id"
+  has_many :product_ingredients
+  has_many :ingredients, through: :product_ingredients
+  has_many :products, through: :product_ingredients
 end
