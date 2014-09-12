@@ -13,7 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require turbolinks
-//= require_tree .
+//= require angular
+//= require_tree ./controllers
+//= require_tree ./directives
+//= require_tree ./filters
+//= require_tree ./services
 
-$(function(){ $(document).foundation(); });
+$(function(){ 
+  $(document).foundation();
+});
