@@ -1,13 +1,12 @@
 <nav class='top-bar'></nav>
 Test <input ng-model='whatever'>
-filter:whatever
-ng-repeat
-ng-show='whatever'
 <h3>The home page</h3>
 <div class='small-10 columns small-centered'>
-  <div class='row' ng-controller='DataCtrl' ng-init="buildings = <%= @buildings %>">
+  <div class='row' ng-controller='DataCtrl' ng-init="buildings=<%= @buildings %>">
     <ul class='small-block-grid-2 medium-block-grid-3 large-block-grid-4'>
-      <li ng-repeat='building in buildings | filter:whatever'><div class='panel'>{{building.name}}</div></li>
+      <li ng-repeat='building in buildings | filter:whatever'>
+        <div class='panel ng-cloak'>{{building.name}}</div>
+      </li>
     </ul>
   </div>
 </div>
