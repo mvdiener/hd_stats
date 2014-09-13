@@ -3,6 +3,16 @@
 <div class='small-6 columns small-centered'>
   <input type='text' ng-model="search.name" placeholder='Search by name...'>
 </div>
+<div class='switch radius centered'>
+  <input id='switch1' type='radio' checked name='switch1'>
+  <label for='switch1'></label>
+  <input id='switch2' type='radio' name='switch1'>
+  <label for='switch2'></label>
+  <input id='switch3' type='radio' name='switch1'>
+  <label for='switch3'></label>
+  <input id='switch4' type='radio' name='switch1'>
+  <label for='switch4'></label>
+</div>
 <div class='small-10 columns small-centered'>
   <div class='row' ng-controller='DataCtrl' ng-init="buildings=<%= @buildings %>; products=<%= @products %>">
     <ul class='small-block-grid-1 medium-block-grid-2 large-block-grid-3'>
