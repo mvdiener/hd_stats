@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140910231545) do
   create_table "product_ingredients", force: true do |t|
     t.integer  "product_id"
     t.integer  "ingredient_id"
+    t.integer  "quantity"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -50,9 +51,9 @@ ActiveRecord::Schema.define(version: 20140910231545) do
     t.integer  "ingredient_id"
     t.string   "name"
     t.integer  "build_time_min"
-    t.integer  "price"
     t.integer  "level_available"
     t.integer  "sell_price_ten"
+    t.integer  "experience"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -8,7 +8,7 @@
 
 farm = Farm.create(name: "Farm")
 
-# Farm buildings
+# Farm buildings ===================
 bakery = Building.create(name: "Bakery", price: "20", build_time: "10 seconds", level_available: "2")
 feed_mill = Building.create(name: "Feed Mill", price: "5 (3,200 for 2nd)", build_time: "40 seconds", level_available: "3 (12 for 2nd")
 dairy = Building.create(name: "Dairy", price: "50", build_time: "2 hours", level_available: "6")
@@ -40,5 +40,24 @@ pig_pen = Building.create(name: "Pig Pen", price: "150", build_time: "Instant", 
 sheep_pasture = Building.create(name: "Sheep Pasture", price: "300", build_time: "Instant", level_available: "16 (26 for 2nd, 42 for 3rd")
 goat_yard = Building.create(name: "Goat Yard", price: "1,000", build_time: "Instant", level_available: "32 (37 for 2nd, 50 for 3rd")
 
-
 farm.buildings.push(bakery, feed_mill, dairy, sugar_mill, popcorn_pot, bbq_grill, pie_oven, loom, sewing_machine, cake_oven, mine, smelter, juice_press, ice_cream_maker, jam_maker, jeweler, coffee_kiosk, soup_kitchen, candy_machine, sauce_maker, sushi_bar, salad_bar, sandwich_bar, smoothie_maker, field, chicken_coop, cow_pasture, pig_pen, sheep_pasture, goat_yard)
+
+# Products per building =================
+# Field
+wheat = Product.create(name: "Wheat", build_time_min: 2, level_available: 1, sell_price_ten: 36, experience: 2)
+field.products.push(wheat)
+ # = Product.create(name: "", build_time_min: , price: , level_available: , sell_price_ten: , experience: )
+ # = Product.create(name: "", build_time_min: , price: , level_available: , sell_price_ten: , experience: )
+ # = Product.create(name: "", build_time_min: , price: , level_available: , sell_price_ten: , experience: )
+ # = Product.create(name: "", build_time_min: , price: , level_available: , sell_price_ten: , experience: )
+
+
+
+
+
+
+
+
+
+
+

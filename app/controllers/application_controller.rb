@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   def index
     @buildings = Farm.first.buildings.order('name').to_json
+    @products = Product.all.to_json
   end
 
 end

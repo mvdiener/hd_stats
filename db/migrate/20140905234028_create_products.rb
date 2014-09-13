@@ -5,9 +5,9 @@ class CreateProducts < ActiveRecord::Migration
       t.integer :ingredient_id
       t.string :name
       t.integer :build_time_min
-      t.integer :price
       t.integer :level_available
       t.integer :sell_price_ten
+      t.integer :experience
 
       t.timestamps
     end

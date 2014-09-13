@@ -16,9 +16,14 @@
  */
 
 .top-bar {
-  background-color: #faeb8c;
+  background-color: #FAEB8C;
 }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
+}
+
+.panel {
+  background-color: #D7F6FA;
+  border-radius: 10px;
 }

@@ -1,11 +1,28 @@
 <nav class='top-bar'></nav>
-Test <input ng-model='whatever'>
-<h3>The home page</h3>
+<p></p>
+<div class='small-6 columns small-centered'>
+  <input type='text' ng-model='search.name' placeholder='Search...'>
+</div>
 <div class='small-10 columns small-centered'>
-  <div class='row' ng-controller='DataCtrl' ng-init="buildings=<%= @buildings %>">
-    <ul class='small-block-grid-2 medium-block-grid-3 large-block-grid-4'>
-      <li ng-repeat='building in buildings | filter:whatever'>
-        <div class='panel ng-cloak'>{{building.name}}</div>
+  <div class='row' ng-controller='DataCtrl' ng-init="buildings=<%= @buildings %>; products=<%= @products %>">
+    <ul class='small-block-grid-1 medium-block-grid-2 large-block-grid-3'>
+      <li ng-repeat='product in products | filter:search:strict'>
+        <div class='panel ng-cloak'>
+          <strong>{{product.name}}</strong><br>
+          Build Time: {{timeStrg(product.build_time_min)}}<br>
+          Level Available: {{product.level_available}}<br>
+          Max Sell Price: {{product.sell_price_ten}}<br>
+          Experience: {{product.experience}}
+        </div>
+      </li>
+      <li ng-repeat='building in buildings | filter:search:strict'>
+        <div class='panel ng-cloak'>
+          <strong>{{building.name}}</strong><br>
+          Cost: {{building.price}}<br>
+          Build Time: {{building.build_time}}<br>
+          Level Available: {{building.level_available}}<br>
+          Produces:
+        </div>
       </li>
     </ul>
   </div>
