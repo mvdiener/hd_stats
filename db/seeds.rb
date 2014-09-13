@@ -44,13 +44,20 @@ farm.buildings.push(bakery, feed_mill, dairy, sugar_mill, popcorn_pot, bbq_grill
 
 # Products per building =================
 # Field
-wheat = Product.create(name: "Wheat", build_time_min: 2, level_available: 1, sell_price_ten: 36, experience: 2)
-field.products.push(wheat)
- # = Product.create(name: "", build_time_min: , price: , level_available: , sell_price_ten: , experience: )
- # = Product.create(name: "", build_time_min: , price: , level_available: , sell_price_ten: , experience: )
- # = Product.create(name: "", build_time_min: , price: , level_available: , sell_price_ten: , experience: )
- # = Product.create(name: "", build_time_min: , price: , level_available: , sell_price_ten: , experience: )
+wheat = Product.create(name: "Wheat", build_time_min: 2, level_available: 1, sell_price_ten: 36, experience: 1)
+corn = Product.create(name: "Corn", build_time_min: 5, level_available: 2, sell_price_ten: 72, experience: 1)
+soybean = Product.create(name: "Soybean", build_time_min: 20, level_available: 5, sell_price_ten: 108, experience: 2)
+sugarcane = Product.create(name: "Sugarcane", build_time_min: 30, level_available: 7, sell_price_ten: 144, experience: 3)
+carrot = Product.create(name: "Carrot", build_time_min: 10, level_available: 9, sell_price_ten: 72, experience: 2)
+indigo = Product.create(name: "Indigo", build_time_min: 120, level_available: 13, sell_price_ten: 252, experience: 5)
+pumpkin = Product.create(name: "Pumpkin", build_time_min: 180, level_available: 15, sell_price_ten: 324, experience: 6)
+apple = Product.create(name: "Apple", build_time_min: 960, level_available: 15, sell_price_ten: 396, experience: 7)
+cotton = Product.create(name: "Cotton", build_time_min: 150, level_available: 18, sell_price_ten: 288, experience: 6)
+ # = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
+ # = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
+ # = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
 
+field.products.push(wheat, corn, soybean, sugarcane, carrot, indigo, pumpkin, apple, cotton)
 
 
 
