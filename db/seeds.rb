@@ -43,6 +43,7 @@ goat_yard = Building.create(name: "Goat Yard", price: "1,000", build_time: "Inst
 farm.buildings.push(bakery, feed_mill, dairy, sugar_mill, popcorn_pot, bbq_grill, pie_oven, loom, sewing_machine, cake_oven, mine, smelter, juice_press, ice_cream_maker, jam_maker, jeweler, coffee_kiosk, soup_kitchen, candy_machine, sauce_maker, sushi_bar, salad_bar, sandwich_bar, smoothie_maker, field, chicken_coop, cow_pasture, pig_pen, sheep_pasture, goat_yard)
 
 # Products per building =================
+
 # Field
 wheat = Product.create(name: "Wheat", build_time_min: 2, level_available: 1, sell_price_ten: 36, experience: 1)
 corn = Product.create(name: "Corn", build_time_min: 5, level_available: 2, sell_price_ten: 72, experience: 1)
@@ -51,19 +52,30 @@ sugarcane = Product.create(name: "Sugarcane", build_time_min: 30, level_availabl
 carrot = Product.create(name: "Carrot", build_time_min: 10, level_available: 9, sell_price_ten: 72, experience: 2)
 indigo = Product.create(name: "Indigo", build_time_min: 120, level_available: 13, sell_price_ten: 252, experience: 5)
 pumpkin = Product.create(name: "Pumpkin", build_time_min: 180, level_available: 15, sell_price_ten: 324, experience: 6)
-apple = Product.create(name: "Apple", build_time_min: 960, level_available: 15, sell_price_ten: 396, experience: 7)
 cotton = Product.create(name: "Cotton", build_time_min: 150, level_available: 18, sell_price_ten: 288, experience: 6)
+chili_pepper = Product.create(name: "Chili Pepper", build_time_min: 240, level_available: 25, sell_price_ten: 360, experience: 7)
+tomato = Product.create(name: "Tomato", build_time_min: 360, level_available: 30, sell_price_ten: 432, experience: 8)
+strawberry = Product.create(name: "Strawberry", build_time_min: 480, level_available: 34, sell_price_ten: 504, experience: 10)
+potato = Product.create(name: "Potato", build_time_min: 220, level_available: 35, sell_price_ten: 360, experience: 7)
+ #rice = Product.create(name: "Rice", build_time_min: 45, level_available: 56, sell_price_ten: , experience: 3)
+ #lettuce = Product.create(name: "Lettuce", build_time_min: 210, level_available: 58, sell_price_ten: , experience: 7)
+
+field.products.push(wheat, corn, soybean, sugarcane, carrot, indigo, pumpkin, cotton, chili_pepper, tomato, strawberry, potato)
+
+# Trees/bushes
+apple = Product.create(name: "Apple", build_time_min: 960, level_available: 15, sell_price_ten: 396, experience: 7)
+raspberry = Product.create(name: "Raspberry", build_time_min: 1080, level_available: 19, sell_price_ten: 468, experience: 9)
+cherry = Product.create(name: "Cherry", build_time_min: 1680, level_available: 22, sell_price_ten: 684, experience: 13)
+blackberry = Product.create(name: "Blackberry", build_time_min: 1920, level_available: 26, sell_price_ten: 828, experience: 16)
+cacao = Product.create(name: "Cacao", build_time_min: 2040, level_available: 36, sell_price_ten: 864, experience: 16)
+coffee_beans = Product.create(name: "Coffee Bean", build_time_min: 1500, level_available: 42, sell_price_ten: 648, experience: 12)
+ #olive = Product.create(name: "Olive", build_time_min: 1440, level_available: 57, sell_price_ten: , experience: 17)
+ #lemon = Product.create(name: "Lemon", build_time_min: 1740, level_available: 66, sell_price_ten: , experience: 18)
+
+
+
+
  # = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
- # = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
- # = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
-
-field.products.push(wheat, corn, soybean, sugarcane, carrot, indigo, pumpkin, apple, cotton)
-
-
-
-
-
-
 
 
 
