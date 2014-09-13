@@ -1,22 +1,22 @@
 <nav class='top-bar'></nav>
 <p></p>
 <div class='small-6 columns small-centered'>
-  <input type='text' ng-model='search.name' placeholder='Search...'>
+  <input type='text' ng-model="search.name" placeholder='Search by name...'>
 </div>
 <div class='small-10 columns small-centered'>
   <div class='row' ng-controller='DataCtrl' ng-init="buildings=<%= @buildings %>; products=<%= @products %>">
     <ul class='small-block-grid-1 medium-block-grid-2 large-block-grid-3'>
-      <li ng-repeat='product in products | filter:search:strict'>
-        <div class='panel ng-cloak'>
+      <li ng-repeat='product in products | filter:search'>
+        <div class='panel product ng-cloak'>
           <strong>{{product.name}}</strong><br>
-          Build Time: {{timeStrg(product.build_time_min)}}<br>
+          Build Time: {{timeStr(product.build_time_min)}}<br>
           Level Available: {{product.level_available}}<br>
-          Max Sell Price: {{product.sell_price_ten}}<br>
+          Max Sell Price: {{priceStr(product.sell_price_ten)}}<br>
           Experience: {{product.experience}}
         </div>
       </li>
-      <li ng-repeat='building in buildings | filter:search:strict'>
-        <div class='panel ng-cloak'>
+      <li ng-repeat='building in buildings | filter:search'>
+        <div class='panel building ng-cloak'>
           <strong>{{building.name}}</strong><br>
           Cost: {{building.price}}<br>
           Build Time: {{building.build_time}}<br>
