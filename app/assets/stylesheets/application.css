@@ -24,6 +24,13 @@
 }
 
 .panel {
-  background-color: #D7F6FA;
   border-radius: 10px;
+}
+
+.building {
+  background-color: #C9FCC7
+}
+
+.product {
+  background-color: #D7F6FA;
 }
