@@ -16,4 +16,16 @@ function DataCtrl($scope){
     return Math.floor(price/10) + " (" + price + " for 10)"
   }
 
+  $scope.productStr = function(objArray){
+    if (objArray === []){
+      return "";
+    } else {
+      console.log("i am here")
+      var productNames = objArray.map(function(product) {
+          return product.name;
+        });
+      return productNames.sort().join(', ');
+    }
+  }
+
 }

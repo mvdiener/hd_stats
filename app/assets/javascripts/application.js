@@ -21,10 +21,4 @@
 
 $(function(){ 
   $(document).foundation();
-
-  $('.switch').on('click', 'input', function(){
-    console.log($(this).siblings().removeClass('checked'))
-    // alert('I have been clicked')
-    $(this).toggleClass('checked');
-  })
 });

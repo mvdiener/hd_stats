@@ -23,6 +23,11 @@
   display: none !important;
 }
 
+.panel h4 {
+  margin-bottom: -10px;
+  padding-bottom: -10px;
+}
+
 .panel {
   border-radius: 10px;
 }
