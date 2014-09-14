@@ -89,27 +89,40 @@ goat_feed = Product.create(name: "Goat Feed", build_time_min: 40, level_availabl
 goat_feed.ingredients.push(wheat, corn, carrot, carrot)
 
 feed_mill.products.push(chicken_feed, cow_feed, pig_feed, sheep_feed, goat_feed)
+wheat.mixtures.push(chicken_feed, sheep_feed, goat_feed)
+corn.mixtures.push(chicken_feed, cow_feed, goat_feed)
+soybean.mixtures.push(cow_feed, pig_feed, sheep_feed)
+carrot.mixtures.push(pig_feed, goat_feed)
 
 # Chicken Coop
 egg = Product.create(name: "Egg", build_time_min: 20, level_available: 1, sell_price_ten: 180, experience: 2)
 chicken_coop.products.push(egg)
+egg.ingredients.push(chicken_feed)
+chicken_feed.mixtures.push(egg)
 
 # Cow Pasture
 milk = Product.create(name: "Milk", build_time_min: 60, level_available: 6, sell_price_ten: 324, experience: 3)
 cow_pasture.products.push(milk)
+milk.ingredients.push(cow_feed)
+cow_feed.mixtures.push(milk)
 
 # Pig Pen
 bacon = Product.create(name: "Bacon", build_time_min: 240, level_available: 10, sell_price_ten: 504, experience: 5)
 pig_pen.products.push(bacon)
+bacon.ingredients.push(pig_feed)
+pig_feed.mixtures.push(bacon)
 
 # Sheep Pasture
 wool = Product.create(name: "Wool", build_time_min: 360, level_available: 16, sell_price_ten: 540, experience: 5)
 sheep_pasture.products.push(wool)
+wool.ingredients.push(sheep_feed)
+sheep_feed.mixtures.push(wool)
 
 # Goat Yard
 goat_milk = Product.create(name: "Goat Milk", build_time_min: 480, level_available: 32, sell_price_ten: 648, experience: 6)
 goat_yard.products.push(goat_milk)
-
+goat_milk.ingredients.push(goat_feed)
+goat_feed.mixtures.push(goat_milk)
 
 # = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
 # = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
@@ -121,5 +134,16 @@ goat_yard.products.push(goat_milk)
 # wooly chaps 3096
 # violet dress 3276
 # diamond ring 8244
+# blackberry jam 3888
+# fish fillet 540
+# sweater 1512
+# chili popcorn 1224
+
+
+
+
+
+
+
 
 
