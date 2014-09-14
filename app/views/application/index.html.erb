@@ -12,7 +12,8 @@
           <strong>Build Time:</strong> {{timeStr(product.build_time_min)}}<br>
           <strong>Level Available:</strong> {{product.level_available}}<br>
           <strong>Max Sell Price:</strong> {{priceStr(product.sell_price_ten)}}<br>
-          <strong>Experience:</strong> {{product.experience}}
+          <strong>Experience:</strong> {{product.experience}}<br>
+          <strong>Ingredients:</strong> {{ingredientStr(product.ingredients)}}
         </div>
       </li>
       <li ng-repeat='building in buildings | filter:search'>

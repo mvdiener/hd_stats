@@ -16,15 +16,29 @@ function DataCtrl($scope){
     return Math.floor(price/10) + " (" + price + " for 10)"
   }
 
-  $scope.productStr = function(objArray){
-    if (objArray === []){
+  $scope.productStr = function(prodArray){
+    if (prodArray.length === 0){
       return "";
     } else {
-      console.log("i am here")
-      var productNames = objArray.map(function(product) {
+      var productNames = prodArray.map(function(product) {
           return product.name;
         });
       return productNames.sort().join(', ');
+    }
+  }
+
+  $scope.ingredientStr = function(ingArray){
+    var totals = {}
+    if (ingArray.length === 0){
+      return "N/A";
+    } else {
+      ingArray.forEach(function(ingredient){
+        totals[ingredient.name] = totals[ingredient.name] + 1 || 1
+      });
+      var ingredientNames = Object.keys(totals).map(function(key){
+        return key + " (" + totals[key] + ")";
+      });
+      return ingredientNames.sort().join(', ');
     }
   }
 
