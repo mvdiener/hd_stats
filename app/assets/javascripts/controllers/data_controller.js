@@ -1,12 +1,14 @@
 function DataCtrl($scope){
 
+  var threeStars = " (" + String.fromCharCode(9733, 9733, 9733) + " "
+
   $scope.timeStr = function(time){
     var hours = Math.floor(time/60)
     var mins = time - (hours * 60)
     if (hours > 0 && mins !== 0) {
-      return hours + " hours and " + mins + " mins"
+      return hours + " hrs " + mins + " mins"
     } else if (hours > 0 && mins === 0) {
-      return hours + " hours"
+      return hours + " hrs"
     } else {
       return mins + " mins"
     }
@@ -39,6 +41,14 @@ function DataCtrl($scope){
         return key + " (" + totals[key] + ")";
       });
       return ingredientNames.sort().join(", ");
+    }
+  }
+
+  $scope.productTime3S = function(time, buildingName){
+    if (buildingName === "Field" || buildingName === undefined) {
+      return $scope.timeStr(time);
+    } else {
+      return $scope.timeStr(time) + threeStars + $scope.timeStr(Math.floor(time-(time*0.15))) + ")"
     }
   }
 
