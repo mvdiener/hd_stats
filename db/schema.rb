@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140910231545) do
   create_table "product_ingredients", force: true do |t|
     t.integer  "product_id"
     t.integer  "ingredient_id"
+    t.integer  "mixture_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(version: 20140910231545) do
   create_table "products", force: true do |t|
     t.integer  "building_id"
     t.integer  "ingredient_id"
+    t.integer  "mixture_id"
     t.string   "name"
     t.integer  "build_time_min"
     t.integer  "level_available"

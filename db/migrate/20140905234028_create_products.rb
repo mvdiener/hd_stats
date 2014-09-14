@@ -3,6 +3,7 @@ class CreateProducts < ActiveRecord::Migration
     create_table :products do |t|
       t.integer :building_id
       t.integer :ingredient_id
+      t.integer :mixture_id
       t.string :name
       t.integer :build_time_min
       t.integer :level_available
