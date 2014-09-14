@@ -38,7 +38,7 @@ function DataCtrl($scope){
       var ingredientNames = Object.keys(totals).map(function(key){
         return key + " (" + totals[key] + ")";
       });
-      return ingredientNames.sort().join(', ');
+      return ingredientNames.sort().join(", ");
     }
   }
 

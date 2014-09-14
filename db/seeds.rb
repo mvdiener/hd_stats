@@ -74,11 +74,21 @@ lemon = Product.create(name: "Lemon", build_time_min: 1740, level_available: 66,
 
 # Feed Mill
 chicken_feed = Product.create(name: "Chicken Feed", build_time_min: 5, level_available: 3, sell_price_ten: 72, experience: 1)
+chicken_feed.ingredients.push(wheat, wheat, corn)
+
 cow_feed = Product.create(name: "Cow Feed", build_time_min: 10, level_available: 6, sell_price_ten: 144, experience: 2)
+cow_feed.ingredients.push(soybean, soybean, corn)
+
 pig_feed = Product.create(name: "Pig Feed", build_time_min: 20, level_available: 10, sell_price_ten: 144, experience: 2)
+pig_feed.ingredients.push(carrot, carrot, soybean)
+
 sheep_feed = Product.create(name: "Sheep Feed", build_time_min: 30, level_available: 16, sell_price_ten: 144, experience: 3)
+sheep_feed.ingredients.push(wheat, wheat, wheat, soybean)
+
 goat_feed = Product.create(name: "Goat Feed", build_time_min: 40, level_available: 32, sell_price_ten: 144, experience: 3)
 goat_feed.ingredients.push(wheat, corn, carrot, carrot)
+
+feed_mill.products.push(chicken_feed, cow_feed, pig_feed, sheep_feed, goat_feed)
 
 # Chicken Coop
 egg = Product.create(name: "Egg", build_time_min: 20, level_available: 1, sell_price_ten: 180, experience: 2)

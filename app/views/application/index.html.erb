@@ -13,7 +13,9 @@
           <strong>Level Available:</strong> {{product.level_available}}<br>
           <strong>Max Sell Price:</strong> {{priceStr(product.sell_price_ten)}}<br>
           <strong>Experience:</strong> {{product.experience}}<br>
-          <strong>Ingredients:</strong> {{ingredientStr(product.ingredients)}}
+          <strong>Ingredients:</strong> {{ingredientStr(product.ingredients)}}<br>
+          <strong>Produced By:</strong> {{product.building.name}}<br>
+          <strong>Used In:</strong> {{productStr(product.products)}}
         </div>
       </li>
       <li ng-repeat='building in buildings | filter:search'>
