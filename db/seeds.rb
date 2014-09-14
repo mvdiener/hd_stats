@@ -57,10 +57,10 @@ chili_pepper = Product.create(name: "Chili Pepper", build_time_min: 240, level_a
 tomato = Product.create(name: "Tomato", build_time_min: 360, level_available: 30, sell_price_ten: 432, experience: 8)
 strawberry = Product.create(name: "Strawberry", build_time_min: 480, level_available: 34, sell_price_ten: 504, experience: 10)
 potato = Product.create(name: "Potato", build_time_min: 220, level_available: 35, sell_price_ten: 360, experience: 7)
- #rice = Product.create(name: "Rice", build_time_min: 45, level_available: 56, sell_price_ten: , experience: 3)
- #lettuce = Product.create(name: "Lettuce", build_time_min: 210, level_available: 58, sell_price_ten: , experience: 7)
+rice = Product.create(name: "Rice", build_time_min: 45, level_available: 56, sell_price_ten: 180, experience: 3)
+lettuce = Product.create(name: "Lettuce", build_time_min: 210, level_available: 58, sell_price_ten: 324, experience: 7)
 
-field.products.push(wheat, corn, soybean, sugarcane, carrot, indigo, pumpkin, cotton, chili_pepper, tomato, strawberry, potato)
+field.products.push(wheat, corn, soybean, sugarcane, carrot, indigo, pumpkin, cotton, chili_pepper, tomato, strawberry, potato, rice, lettuce)
 
 # Trees/bushes
 apple = Product.create(name: "Apple", build_time_min: 960, level_available: 15, sell_price_ten: 396, experience: 7)
@@ -69,14 +69,46 @@ cherry = Product.create(name: "Cherry", build_time_min: 1680, level_available: 2
 blackberry = Product.create(name: "Blackberry", build_time_min: 1920, level_available: 26, sell_price_ten: 828, experience: 16)
 cacao = Product.create(name: "Cacao", build_time_min: 2040, level_available: 36, sell_price_ten: 864, experience: 16)
 coffee_beans = Product.create(name: "Coffee Bean", build_time_min: 1500, level_available: 42, sell_price_ten: 648, experience: 12)
- #olive = Product.create(name: "Olive", build_time_min: 1440, level_available: 57, sell_price_ten: , experience: 17)
- #lemon = Product.create(name: "Lemon", build_time_min: 1740, level_available: 66, sell_price_ten: , experience: 18)
+olive = Product.create(name: "Olive", build_time_min: 1440, level_available: 57, sell_price_ten: 828, experience: 17)
+lemon = Product.create(name: "Lemon", build_time_min: 1740, level_available: 66, sell_price_ten: nil, experience: 18)
+
+# Feed Mill
+chicken_feed = Product.create(name: "Chicken Feed", build_time_min: 5, level_available: 3, sell_price_ten: 72, experience: 1)
+cow_feed = Product.create(name: "Cow Feed", build_time_min: 10, level_available: 6, sell_price_ten: 144, experience: 2)
+pig_feed = Product.create(name: "Pig Feed", build_time_min: 20, level_available: 10, sell_price_ten: nil, experience: 2)
+sheep_feed = Product.create(name: "Sheep Feed", build_time_min: 30, level_available: 16, sell_price_ten: 144, experience: 3)
+goat_feed = Product.create(name: "Goat Feed", build_time_min: 40, level_available: 32, sell_price_ten: nil, experience: 3)
+
+# Chicken Coop
+egg = Product.create(name: "Egg", build_time_min: 20, level_available: 1, sell_price_ten: 180, experience: 2)
+chicken_coop.products.push(egg)
+
+# Cow Pasture
+milk = Product.create(name: "Milk", build_time_min: 60, level_available: 6, sell_price_ten: 324, experience: 3)
+cow_pasture.products.push(milk)
+
+# Pig Pen
+bacon = Product.create(name: "Bacon", build_time_min: 240, level_available: 10, sell_price_ten: 504, experience: 5)
+pig_pen.products.push(bacon)
+
+# Sheep Pasture
+wool = Product.create(name: "Wool", build_time_min: 360, level_available: 16, sell_price_ten: 540, experience: 5)
+sheep_pasture.products.push(wool)
+
+# Goat Yard
+goat_milk = Product.create(name: "Goat Milk", build_time_min: 480, level_available: 32, sell_price_ten: 648, experience: 6)
+goat_yard.products.push(goat_milk)
 
 
-
-
- # = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
-
-
+# = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
+# = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
+# = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
+# = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
+# popcorn 324
+# white sugar 504
+# carrot juice 468
+# wooly chaps 3096
+# violet dress 3276
+# diamond ring 8244
 
 
