@@ -10,7 +10,7 @@ farm = Farm.create(name: "Farm")
 
 # Farm buildings ===================
 bakery = Building.create(name: "Bakery", price: "20", build_time: "10 seconds", level_available: "2")
-feed_mill = Building.create(name: "Feed Mill", price: "5 (3,200 for 2nd)", build_time: "40 seconds", level_available: "3 (12 for 2nd")
+feed_mill = Building.create(name: "Feed Mill", price: "5 (3,200 for 2nd)", build_time: "40 seconds", level_available: "3 (12 for 2nd)")
 dairy = Building.create(name: "Dairy", price: "50", build_time: "2 hours", level_available: "6")
 sugar_mill = Building.create(name: "Sugar Mill", price: "350", build_time: "6 hours", level_available: "7")
 popcorn_pot = Building.create(name: "Popcorn Pot", price: "650", build_time: "8 hours", level_available: "8")
@@ -34,13 +34,26 @@ salad_bar = Building.create(name: "Salad Bar", price: "165,000", build_time: "1 
 sandwich_bar = Building.create(name: "Sandwich Bar", price: "180,000", build_time: "2 days, 4 hours", level_available: "61")
 smoothie_maker = Building.create(name: "Smoothie Maker", price: "220,000", build_time: "3 days", level_available: "64")
 field = Building.create(name: "Field", price: "1", build_time: "Instant", level_available: "1 (6 fields at level 1, +3 more every other level, +2 more every other level once level 49 is reached")
-chicken_coop = Building.create(name: "Chicken Coop", price: "5", build_time: "Instant", level_available: "1 (12 for 2nd, 23 for 3rd")
-cow_pasture = Building.create(name: "Cow Pasture", price: "20", build_time: "Instant", level_available: "6 (15 for 2nd, 27 for 3rd")
-pig_pen = Building.create(name: "Pig Pen", price: "150", build_time: "Instant", level_available: "10 (18 for 2nd, 32 for 3rd")
-sheep_pasture = Building.create(name: "Sheep Pasture", price: "300", build_time: "Instant", level_available: "16 (26 for 2nd, 42 for 3rd")
-goat_yard = Building.create(name: "Goat Yard", price: "1,000", build_time: "Instant", level_available: "32 (37 for 2nd, 50 for 3rd")
+chicken_coop = Building.create(name: "Chicken Coop", price: "5", build_time: "Instant", level_available: "1 (12 for 2nd, 23 for 3rd)")
+cow_pasture = Building.create(name: "Cow Pasture", price: "20", build_time: "Instant", level_available: "6 (15 for 2nd, 27 for 3rd)")
+pig_pen = Building.create(name: "Pig Pen", price: "150", build_time: "Instant", level_available: "10 (18 for 2nd, 32 for 3rd)")
+sheep_pasture = Building.create(name: "Sheep Pasture", price: "300", build_time: "Instant", level_available: "16 (26 for 2nd, 42 for 3rd)")
+goat_yard = Building.create(name: "Goat Yard", price: "1,000", build_time: "Instant", level_available: "32 (37 for 2nd, 50 for 3rd)")
+beehive_tree = Building.create(name: "Beehive Tree", price: "4,000", build_time: "Instant", level_available: "39 (2nd hive after 4,000 units of nectar, 3rd hive after 40,000 units of nectar, 4th hive after 400,000 units of nectar)")
 
-farm.buildings.push(bakery, feed_mill, dairy, sugar_mill, popcorn_pot, bbq_grill, pie_oven, loom, sewing_machine, cake_oven, mine, smelter, juice_press, ice_cream_maker, jam_maker, jeweler, coffee_kiosk, soup_kitchen, candy_machine, sauce_maker, sushi_bar, salad_bar, sandwich_bar, smoothie_maker, field, chicken_coop, cow_pasture, pig_pen, sheep_pasture, goat_yard)
+# Trees/bushes
+apple_tree = Building.create(name: "Apple Tree", price: "160", build_time: "Instant", level_available: "15")
+raspberry_bush = Building.create(name: "Raspberry Bush", price: "220", build_time: "Instant", level_available: "19")
+cherry_tree = Building.create(name: "Cherry Tree", price: "410", build_time: "Instant", level_available: "22")
+blackberry_bush = Building.create(name: "Blackberry Bush", price: "530", build_time: "Instant", level_available: "26")
+cacao_tree = Building.create(name: "Cacao Tree", price: "550", build_time: "Instant", level_available: "36")
+coffee_bush = Building.create(name: "Coffee Bush", price: "375", build_time: "Instant", level_available: "42")
+nectar_bush = Building.create(name: "Nectar Bush", price: "120", build_time: "Instant", level_available: "39")
+olive_tree = Building.create(name: "Olive Tree", price: "620", build_time: "Instant", level_available: "57")
+lemon_tree = Building.create(name: "Lemon Tree", price: "670", build_time: "Instant", level_available: "66")
+
+farm.buildings.push(bakery, feed_mill, dairy, sugar_mill, popcorn_pot, bbq_grill, pie_oven, loom, sewing_machine, cake_oven, mine, smelter, juice_press, ice_cream_maker, jam_maker, jeweler, coffee_kiosk, soup_kitchen, candy_machine, sauce_maker, sushi_bar, salad_bar, sandwich_bar, smoothie_maker, field, chicken_coop, cow_pasture, pig_pen, sheep_pasture, goat_yard, beehive_tree, apple_tree, raspberry_bush, cherry_tree, blackberry_bush, cacao_tree, coffee_bush, nectar_bush, olive_tree, lemon_tree)
+
 
 # Products per building =================
 
@@ -62,15 +75,40 @@ lettuce = Product.create(name: "Lettuce", build_time_min: 210, level_available: 
 
 field.products.push(wheat, corn, soybean, sugarcane, carrot, indigo, pumpkin, cotton, chili_pepper, tomato, strawberry, potato, rice, lettuce)
 
-# Trees/bushes
+# Fruit
 apple = Product.create(name: "Apple", build_time_min: 960, level_available: 15, sell_price_ten: 396, experience: 7)
+apple_tree.products.push(apple)
+
 raspberry = Product.create(name: "Raspberry", build_time_min: 1080, level_available: 19, sell_price_ten: 468, experience: 9)
+raspberry_bush.products.push(raspberry)
+
 cherry = Product.create(name: "Cherry", build_time_min: 1680, level_available: 22, sell_price_ten: 684, experience: 13)
+cherry_tree.products.push(cherry)
+
 blackberry = Product.create(name: "Blackberry", build_time_min: 1920, level_available: 26, sell_price_ten: 828, experience: 16)
+blackberry_bush.products.push(blackberry)
+
+nectar = Product.create(name: "Nectar", build_time_min: nil, level_available: 39, sell_price_ten: nil, experience: nil)
+nectar_bush.products.push(nectar)
+
+honeycomb = Product.create(name: "Honeycomb", build_time_min: 40, level_available: 39, sell_price_ten: nil, experience: 8)
+beehive_tree.products.push(honeycomb)
+100.times do
+  honeycomb.ingredients.push(nectar)
+end
+
 cacao = Product.create(name: "Cacao", build_time_min: 2040, level_available: 36, sell_price_ten: 864, experience: 16)
-coffee_beans = Product.create(name: "Coffee Bean", build_time_min: 1500, level_available: 42, sell_price_ten: 648, experience: 12)
+cacao_tree.products.push(cacao)
+
+coffee_bean = Product.create(name: "Coffee Bean", build_time_min: 1500, level_available: 42, sell_price_ten: 648, experience: 12)
+coffee_bush.products.push(coffee_bean)
+
 olive = Product.create(name: "Olive", build_time_min: 1440, level_available: 57, sell_price_ten: 828, experience: 17)
+olive_tree.products.push(olive)
+
 lemon = Product.create(name: "Lemon", build_time_min: 1740, level_available: 66, sell_price_ten: nil, experience: 18)
+lemon_tree.products.push(lemon)
+
 
 # Feed Mill
 chicken_feed = Product.create(name: "Chicken Feed", build_time_min: 5, level_available: 3, sell_price_ten: 72, experience: 1)
@@ -96,40 +134,118 @@ carrot.mixtures.push(pig_feed, goat_feed)
 
 # Chicken Coop
 egg = Product.create(name: "Egg", build_time_min: 20, level_available: 1, sell_price_ten: 180, experience: 2)
-chicken_coop.products.push(egg)
 egg.ingredients.push(chicken_feed)
 chicken_feed.mixtures.push(egg)
+chicken_coop.products.push(egg)
 
 # Cow Pasture
 milk = Product.create(name: "Milk", build_time_min: 60, level_available: 6, sell_price_ten: 324, experience: 3)
-cow_pasture.products.push(milk)
 milk.ingredients.push(cow_feed)
 cow_feed.mixtures.push(milk)
+cow_pasture.products.push(milk)
 
 # Pig Pen
 bacon = Product.create(name: "Bacon", build_time_min: 240, level_available: 10, sell_price_ten: 504, experience: 5)
-pig_pen.products.push(bacon)
 bacon.ingredients.push(pig_feed)
 pig_feed.mixtures.push(bacon)
+pig_pen.products.push(bacon)
 
 # Sheep Pasture
 wool = Product.create(name: "Wool", build_time_min: 360, level_available: 16, sell_price_ten: 540, experience: 5)
-sheep_pasture.products.push(wool)
 wool.ingredients.push(sheep_feed)
 sheep_feed.mixtures.push(wool)
+sheep_pasture.products.push(wool)
 
 # Goat Yard
 goat_milk = Product.create(name: "Goat Milk", build_time_min: 480, level_available: 32, sell_price_ten: 648, experience: 6)
-goat_yard.products.push(goat_milk)
 goat_milk.ingredients.push(goat_feed)
 goat_feed.mixtures.push(goat_milk)
+goat_yard.products.push(goat_milk)
+
+# Sugar Mill
+brown_sugar = Product.create(name: "Brown Sugar", build_time_min: 20, level_available: 7, sell_price_ten: 324, experience: 4)
+brown_sugar.ingredients.push(sugarcane)
+
+white_sugar = Product.create(name: "White Sugar", build_time_min: 40, level_available: 13, sell_price_ten: 504, experience: 6)
+white_sugar.ingredients.push(sugarcane, sugarcane)
+
+syrup = Product.create(name: "Syrup", build_time_min: 60, level_available: 18, sell_price_ten: 900, experience: 11)
+syrup.ingredients.push(sugarcane, sugarcane, sugarcane, sugarcane)
+
+sugarcane.mixtures.push(brown_sugar, white_sugar, syrup)
+sugar_mill.products.push(brown_sugar, white_sugar, syrup)
+
+# Dairy
+cream = Product.create(name: "Cream", build_time_min: 20, level_available: 6, sell_price_ten: 504, experience: 6)
+cream.ingredients.push(milk)
+
+butter = Product.create(name: "Butter", build_time_min: 30, level_available: 9, sell_price_ten: 828, experience: 10)
+butter.ingredients.push(milk, milk)
+
+cheese = Product.create(name: "Cheese", build_time_min: 60, level_available: 12, sell_price_ten: 1224, experience: 15)
+cheese.ingredients.push(milk, milk, milk)
+
+goat_cheese = Product.create(name: "Goat Cheese", build_time_min: 90, level_available: 33, sell_price_ten: nil, experience: 19)
+goat_cheese.ingredients.push(goat_milk, goat_milk)
+
+goat_milk.mixtures.push(goat_cheese)
+milk.mixtures.push(cream, butter, cheese)
+dairy.products.push(cream, butter, cheese, goat_cheese)
+
+# Bakery
+bread = Product.create(name: "Bread", build_time_min: 5, level_available: 2, sell_price_ten: 216, experience: 3)
+bread.ingredients.push(wheat, wheat, wheat)
+wheat.mixtures.push(bread)
+
+corn_bread = Product.create(name: "Corn Bread", build_time_min: 30, level_available: 7, sell_price_ten: 720, experience: 8)
+corn_bread.ingredients.push(corn, corn, egg, egg)
+corn.mixtures.push(corn_bread)
+egg.mixtures.push(corn_bread)
+
+cookie = Product.create(name: "Cookie", build_time_min: 60, level_available: 10, sell_price_ten: nil, experience: 13)
+cookie.ingredients.push(wheat, wheat, egg, egg, brown_sugar)
+wheat.mixtures.push(cookie)
+egg.mixtures.push(cookie)
+brown_sugar.mixtures.push(cookie)
+
+raspberry_muffin = Product.create(name: "Raspberry Muffin", build_time_min: 45, level_available: 19, sell_price_ten: nil, experience: 17)
+raspberry_muffin.ingredients.push(wheat, wheat, egg, raspberry, raspberry)
+wheat.mixtures.push(raspberry_muffin)
+egg.mixtures.push(raspberry_muffin)
+raspberry.mixtures.push(raspberry_muffin)
+
+blackberry_muffin = Product.create(name: "Blackberry Muffin", build_time_min: 45, level_available: 26, sell_price_ten: 2268, experience: 27)
+blackberry_muffin.ingredients.push(wheat, egg, egg, blackberry, blackberry)
+wheat.mixtures.push(blackberry_muffin)
+egg.mixtures.push(blackberry_muffin)
+blackberry.mixtures.push(blackberry_muffin)
+
+pizza = Product.create(name: "Pizza", build_time_min: 15, level_available: 33, sell_price_ten: nil, experience: 23)
+pizza.ingredients.push(wheat, wheat, tomato, cheese)
+wheat.mixtures.push(pizza)
+tomato.mixtures.push(pizza)
+cheese.mixtures.push(pizza)
+
+spicy_pizza = Product.create(name: "Spicy Pizza", build_time_min: 15, level_available: 37, sell_price_ten: nil, experience: 27)
+spicy_pizza.ingredients.push(wheat, wheat, tomato, chili_pepper, cheese)
+wheat.mixtures.push(spicy_pizza)
+tomato.mixtures.push(spicy_pizza)
+chili_pepper.mixtures.push(spicy_pizza)
+cheese.mixtures.push(spicy_pizza)
+
+potato_bread = Product.create(name: "Potato Bread", build_time_min: 45, level_available: 39, sell_price_ten: nil, experience: 34)
+potato_bread.ingredients.push(potato, potato, white_sugar, egg, egg, egg, butter)
+potato.mixtures.push(potato_bread)
+white_sugar.mixtures.push(potato_bread)
+egg.mixtures.push(potato_bread)
+butter.mixtures.push(potato_bread)
+
+#frutti_pizza = Product.create(name: "Frutti di Mare Pizza", build_time_min: 15, level_available: 45, sell_price_ten: nil, experience: 32)
+
+bakery.products.push(bread, corn_bread, cookie, raspberry_muffin, blackberry_muffin, pizza, spicy_pizza, potato_bread)
 
 # = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
-# = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
-# = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
-# = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
 # popcorn 324
-# white sugar 504
 # carrot juice 468
 # wooly chaps 3096
 # violet dress 3276
@@ -138,12 +254,8 @@ goat_feed.mixtures.push(goat_milk)
 # fish fillet 540
 # sweater 1512
 # chili popcorn 1224
-
-
-
-
-
-
-
-
-
+# roasted tomatoes 1188
+# espresso 2484
+# apple jam 2196
+# cotton fabric 1080
+# blue sweater 2088
