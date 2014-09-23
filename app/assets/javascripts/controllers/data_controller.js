@@ -15,12 +15,16 @@ function DataCtrl($scope){
   }
 
   $scope.priceStr = function(price){
-    return Math.floor(price/10) + " (" + price + " for 10)"
+    if (price === null) {
+      return "N/A"
+    } else {
+      return Math.floor(price/10) + " (" + price + " for 10)"
+    }
   }
 
   $scope.productStr = function(prodArray){
     if (prodArray.length === 0){
-      return "";
+      return "N/A";
     } else {
       var productNames = prodArray.map(function(product) {
           return product.name;
@@ -45,7 +49,10 @@ function DataCtrl($scope){
   }
 
   $scope.productTime3S = function(time, buildingName){
-    if (buildingName === "Field" || buildingName === undefined) {
+    var regTest = /(field)|(tree)|(bush)/i
+    if (time === null) {
+      return "N/A"
+    } else if (regTest.test(buildingName) || buildingName === undefined) {
       return $scope.timeStr(time);
     } else {
       return $scope.timeStr(time) + threeStars + $scope.timeStr(Math.floor(time-(time*0.15))) + ")"
