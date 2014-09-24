@@ -1,14 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 
 farm = Farm.create(name: "Farm")
+fishing_area = Fishery.create(name: "Fishing Area")
 
 # Farm buildings ===================
+
 bakery = Building.create(name: "Bakery", price: "20", build_time: "10 seconds", level_available: "2")
 feed_mill = Building.create(name: "Feed Mill", price: "5 (3,200 for 2nd)", build_time: "40 seconds", level_available: "3 (12 for 2nd)")
 dairy = Building.create(name: "Dairy", price: "50", build_time: "2 hours", level_available: "6")
@@ -25,6 +20,7 @@ juice_press = Building.create(name: "Juice Press", price: "31,000", build_time: 
 ice_cream_maker = Building.create(name: "Ice Cream Maker", price: "38,000", build_time: "1 day, 7 hours", level_available: "29")
 jam_maker = Building.create(name: "Jam Maker", price: "59,000", build_time: "1 day, 12 hours", level_available: "35")
 jeweler = Building.create(name: "Jeweler", price: "68,000", build_time: "1 day, 11 hours", level_available: "38")
+honey_extractor = Building.create(name: "Honey Extractor", price: "35,000", build_time: "1 day", level_available: "39")
 coffee_kiosk = Building.create(name: "Coffee Kiosk", price: "75,000", build_time: "1 day, 11 hours", level_available: "42")
 soup_kitchen = Building.create(name: "Soup Kitchen", price: "115,000", build_time: "1 day, 12 hours", level_available: "46")
 candy_machine = Building.create(name: "Candy Machine", price: "120,000", build_time: "1 day", level_available: "51")
@@ -52,8 +48,13 @@ nectar_bush = Building.create(name: "Nectar Bush", price: "120", build_time: "In
 olive_tree = Building.create(name: "Olive Tree", price: "620", build_time: "Instant", level_available: "57")
 lemon_tree = Building.create(name: "Lemon Tree", price: "670", build_time: "Instant", level_available: "66")
 
-farm.buildings.push(bakery, feed_mill, dairy, sugar_mill, popcorn_pot, bbq_grill, pie_oven, loom, sewing_machine, cake_oven, mine, smelter, juice_press, ice_cream_maker, jam_maker, jeweler, coffee_kiosk, soup_kitchen, candy_machine, sauce_maker, sushi_bar, salad_bar, sandwich_bar, smoothie_maker, field, chicken_coop, cow_pasture, pig_pen, sheep_pasture, goat_yard, beehive_tree, apple_tree, raspberry_bush, cherry_tree, blackberry_bush, cacao_tree, coffee_bush, nectar_bush, olive_tree, lemon_tree)
+farm.buildings.push(bakery, feed_mill, dairy, sugar_mill, popcorn_pot, bbq_grill, pie_oven, loom, sewing_machine, cake_oven, mine, smelter, juice_press, ice_cream_maker, jam_maker, jeweler, honey_extractor, coffee_kiosk, soup_kitchen, candy_machine, sauce_maker, sushi_bar, salad_bar, sandwich_bar, smoothie_maker, field, chicken_coop, cow_pasture, pig_pen, sheep_pasture, goat_yard, beehive_tree, apple_tree, raspberry_bush, cherry_tree, blackberry_bush, cacao_tree, coffee_bush, nectar_bush, olive_tree, lemon_tree)
 
+# Fishing area buildings ================
+
+lure_workbench = Building.create(name: "Lure Workbench", price: "Free", build_time: "Instant", level_available: "27")
+net_maker = Building.create(name: "Net Maker", price: "28,000", build_time: "2 days", level_available: "30")
+lobster_pool = Building.create(name: "Lobster Pool", price: "80,000 (45,000 for 1st upgrade, 52,500 for 2nd, 63,800 for 3rd, 79,800 for 4th, 102,000 for 5th)", build_time: "2 days (12 hours for 1st upgrade, 14 hours for 2nd, 16 hours for 3rd, 18 hours for 4th, 20 hours for 5th)", level_available: "44")
 
 # Products per building =================
 
@@ -93,6 +94,7 @@ nectar_bush.products.push(nectar)
 
 honeycomb = Product.create(name: "Honeycomb", build_time_min: 40, level_available: 39, sell_price_ten: nil, experience: 8)
 beehive_tree.products.push(honeycomb)
+nectar.mixtures.push(honeycomb)
 100.times do
   honeycomb.ingredients.push(nectar)
 end
@@ -185,12 +187,18 @@ butter.ingredients.push(milk, milk)
 cheese = Product.create(name: "Cheese", build_time_min: 60, level_available: 12, sell_price_ten: 1224, experience: 15)
 cheese.ingredients.push(milk, milk, milk)
 
-goat_cheese = Product.create(name: "Goat Cheese", build_time_min: 90, level_available: 33, sell_price_ten: nil, experience: 19)
+goat_cheese = Product.create(name: "Goat Cheese", build_time_min: 90, level_available: 33, sell_price_ten: 1620, experience: 19)
 goat_cheese.ingredients.push(goat_milk, goat_milk)
 
 goat_milk.mixtures.push(goat_cheese)
 milk.mixtures.push(cream, butter, cheese)
 dairy.products.push(cream, butter, cheese, goat_cheese)
+
+# Honey Extractor
+honey = Product.create(name: "Honey", build_time_min: 20, level_available: 39, sell_price_ten: nil, experience: 19)
+honey.ingredients.push(honeycomb, honeycomb)
+honeycomb.mixtures.push(honey)
+honey_extractor.products.push(honey)
 
 # Bakery
 bread = Product.create(name: "Bread", build_time_min: 5, level_available: 2, sell_price_ten: 216, experience: 3)
@@ -244,8 +252,33 @@ butter.mixtures.push(potato_bread)
 
 bakery.products.push(bread, corn_bread, cookie, raspberry_muffin, blackberry_muffin, pizza, spicy_pizza, potato_bread)
 
+# Popcorn Pot
+
+popcorn = Product.create(name: "Popcorn", build_time_min: 30, level_available: 8, sell_price_ten: 324, experience: 4)
+popcorn.ingredients.push(corn, corn)
+
+buttered_popcorn = Product.create(name: "Buttered Popcorn", build_time_min: 60, level_available: 16, sell_price_ten: nil, experience: 15)
+buttered_popcorn.ingredients.push(corn, corn, butter)
+butter.mixtures.push(buttered_popcorn)
+
+chili_popcorn = Product.create(name: "Chili Popcorn", build_time_min: 120, level_available: 25, sell_price_ten: 1224, experience: 15)
+chili_popcorn.ingredients.push(corn, corn, chili_pepper, chili_pepper)
+chili_pepper.mixtures.push(chili_popcorn)
+
+honey_popcorn = Product.create(name: "Honey Popcorn", build_time_min: 90, level_available: 40, sell_price_ten: nil, experience: 43)
+honey_popcorn.ingredients.push(corn, corn, honey, honey)
+honey.mixtures.push(honey_popcorn)
+
+chocolate_popcorn = Product.create(name: "Chocolate Popcorn", build_time_min: 150, level_available: 44, sell_price_ten: 2484, experience: 29)
+chocolate_popcorn.ingredients.push(corn, corn, cacao, cacao)
+cacao.mixtures.push(chocolate_popcorn)
+
+corn.mixtures.push(popcorn, buttered_popcorn, chili_popcorn, honey_popcorn, chocolate_popcorn)
+popcorn_pot.products.push(popcorn, buttered_popcorn, chili_popcorn, honey_popcorn, chocolate_popcorn)
+
+
+
 # = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
-# popcorn 324
 # carrot juice 468
 # wooly chaps 3096
 # violet dress 3276
@@ -253,9 +286,15 @@ bakery.products.push(bread, corn_bread, cookie, raspberry_muffin, blackberry_muf
 # blackberry jam 3888
 # fish fillet 540
 # sweater 1512
-# chili popcorn 1224
 # roasted tomatoes 1188
 # espresso 2484
 # apple jam 2196
 # cotton fabric 1080
 # blue sweater 2088
+# tomato juice 1620
+# cotton shirt 2412
+# bacon pie 2196
+# raspberry jam 2520
+# fish pie 2268
+# blue wolly hat 1116
+# baked potato 2988
