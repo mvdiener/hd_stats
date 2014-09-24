@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
-    @buildings = Farm.first.buildings.order('name').to_json(include: :products)
+    @buildings = Building.all.order('name').to_json(include: :products)
     @products = Product.all.order('name').to_json(include: [:ingredients, :building, :mixtures])
   end
 
