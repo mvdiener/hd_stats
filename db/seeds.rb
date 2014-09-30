@@ -56,6 +56,16 @@ lure_workbench = Building.create(name: "Lure Workbench", price: "Free", build_ti
 net_maker = Building.create(name: "Net Maker", price: "28,000", build_time: "2 days", level_available: "30")
 lobster_pool = Building.create(name: "Lobster Pool", price: "80,000 (45,000 for 1st upgrade, 52,500 for 2nd, 63,800 for 3rd, 79,800 for 4th, 102,000 for 5th)", build_time: "2 days (12 hours for 1st upgrade, 14 hours for 2nd, 16 hours for 3rd, 18 hours for 4th, 20 hours for 5th)", level_available: "44")
 
+fishing_area.buildings.push(lure_workbench, net_maker, lobster_pool)
+
+# Non building related products
+
+diamond = Product.create(name: "Diamond", build_time_min: nil, level_available: nil, sell_price_ten: nil, experience: nil)
+green_voucher = Product.create(name: "Green Voucher", build_time_min: nil, level_available: nil, sell_price_ten: nil, experience: nil)
+blue_voucher = Product.create(name: "Blue Voucher", build_time_min: nil, level_available: nil, sell_price_ten: nil, experience: nil)
+pink_voucher = Product.create(name: "Pink Voucher", build_time_min: nil, level_available: nil, sell_price_ten: nil, experience: nil)
+gold_voucher= Product.create(name: "Gold Voucher", build_time_min: nil, level_available: nil, sell_price_ten: nil, experience: nil)
+
 # Products per building =================
 
 # Field
@@ -75,6 +85,18 @@ rice = Product.create(name: "Rice", build_time_min: 45, level_available: 56, sel
 lettuce = Product.create(name: "Lettuce", build_time_min: 210, level_available: 58, sell_price_ten: 324, experience: 7)
 
 field.products.push(wheat, corn, soybean, sugarcane, carrot, indigo, pumpkin, cotton, chili_pepper, tomato, strawberry, potato, rice, lettuce)
+
+# Fishing area
+# red_lure = Product.create(name: "Red Lure", build_time_min: , level_available: , sell_price_ten: , experience: )
+# = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
+# = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
+# = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
+# = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
+# = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
+# = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
+# = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
+fish_fillet = Product.create(name: "Fish Fillet", build_time_min: 0, level_available: 27, sell_price_ten: 540, experience: 4)
+lobster_tail = Product.create(name: "Lobster Tail", build_time_min: 360, level_available: 44, sell_price_ten: nil, experience: 24)
 
 # Fruit
 apple = Product.create(name: "Apple", build_time_min: 960, level_available: 15, sell_price_ten: 396, experience: 7)
@@ -228,7 +250,7 @@ wheat.mixtures.push(blackberry_muffin)
 egg.mixtures.push(blackberry_muffin)
 blackberry.mixtures.push(blackberry_muffin)
 
-pizza = Product.create(name: "Pizza", build_time_min: 15, level_available: 33, sell_price_ten: nil, experience: 23)
+pizza = Product.create(name: "Pizza", build_time_min: 15, level_available: 33, sell_price_ten: 1908, experience: 23)
 pizza.ingredients.push(wheat, wheat, tomato, cheese)
 wheat.mixtures.push(pizza)
 tomato.mixtures.push(pizza)
@@ -248,12 +270,16 @@ white_sugar.mixtures.push(potato_bread)
 egg.mixtures.push(potato_bread)
 butter.mixtures.push(potato_bread)
 
-#frutti_pizza = Product.create(name: "Frutti di Mare Pizza", build_time_min: 15, level_available: 45, sell_price_ten: nil, experience: 32)
+frutti_pizza = Product.create(name: "Frutti di Mare Pizza", build_time_min: 15, level_available: 45, sell_price_ten: nil, experience: 32)
+frutti_pizza.ingredients.push(wheat, wheat, fish_fillet, lobster_tail, cheese)
+wheat.mixtures.push(frutti_pizza)
+fish_fillet.mixtures.push(frutti_pizza)
+lobster_tail.mixtures.push(frutti_pizza)
+cheese.mixtures.push(frutti_pizza)
 
-bakery.products.push(bread, corn_bread, cookie, raspberry_muffin, blackberry_muffin, pizza, spicy_pizza, potato_bread)
+bakery.products.push(bread, corn_bread, cookie, raspberry_muffin, blackberry_muffin, pizza, spicy_pizza, potato_bread, frutti_pizza)
 
 # Popcorn Pot
-
 popcorn = Product.create(name: "Popcorn", build_time_min: 30, level_available: 8, sell_price_ten: 324, experience: 4)
 popcorn.ingredients.push(corn, corn)
 
@@ -276,7 +302,33 @@ cacao.mixtures.push(chocolate_popcorn)
 corn.mixtures.push(popcorn, buttered_popcorn, chili_popcorn, honey_popcorn, chocolate_popcorn)
 popcorn_pot.products.push(popcorn, buttered_popcorn, chili_popcorn, honey_popcorn, chocolate_popcorn)
 
+# BBQ Grill
+pancake = Product.create(name: "Pancake", build_time_min: 30, level_available: 9, sell_price_ten: nil, experience: 13)
+pancake.ingredients.push(egg, egg, egg, brown_sugar)
+egg.mixtures.push(pancake)
+brown_sugar.mixtures.push(pancake)
 
+bacon_eggs = Product.create(name: "Bacon and Eggs", build_time_min: 60, level_available: 11, sell_price_ten: nil, experience: 24)
+bacon_eggs.ingredients.push(egg, egg, egg, egg, bacon, bacon)
+egg.mixtures.push(bacon_eggs)
+bacon.mixtures.push(bacon_eggs)
+
+hamburger = Product.create(name: "Hamburger", build_time_min: 120, level_available: 18, sell_price_ten: nil, experience: 22)
+hamburger.ingredients.push(bread, bread, bacon, bacon)
+bread.mixtures.push(hamburger)
+bacon.mixtures.push(hamburger)
+
+fish_burger = Product.create(name: "Fish Burger", build_time_min: 120, level_available: 27, sell_price_ten: nil, experience: 27)
+fish_burger.ingredients.push(bread, bread, fish_fillet, fish_fillet, chili_pepper)
+bread.mixtures.push(fish_burger)
+fish_fillet.mixtures.push(fish_burger)
+chili_pepper.mixtures.push(fish_burger)
+# = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
+# = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
+# = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
+# = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
+
+bbq_grill.products.push(pancake, bacon_eggs, hamburger, fish_burger)
 
 # = Product.create(name: "", build_time_min: , level_available: , sell_price_ten: , experience: )
 # carrot juice 468
@@ -284,7 +336,6 @@ popcorn_pot.products.push(popcorn, buttered_popcorn, chili_popcorn, honey_popcor
 # violet dress 3276
 # diamond ring 8244
 # blackberry jam 3888
-# fish fillet 540
 # sweater 1512
 # roasted tomatoes 1188
 # espresso 2484
@@ -298,3 +349,14 @@ popcorn_pot.products.push(popcorn, buttered_popcorn, chili_popcorn, honey_popcor
 # fish pie 2268
 # blue wolly hat 1116
 # baked potato 2988
+# carrot pie 828
+# pumpkin pie 1584
+# silver ore 180
+# gold ore 216
+# coal 108
+# iron ore 144
+# chocolate cake 3204
+# shepards pie 2808
+
+
+

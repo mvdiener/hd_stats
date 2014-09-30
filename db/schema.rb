@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20140910231545) do
   end
 
   create_table "fisheries", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
